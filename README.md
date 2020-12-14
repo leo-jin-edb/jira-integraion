@@ -7,3 +7,7 @@ Install guide here...
 ## Architecture
 
 ## Roadmap
+
+## Contributor Guidelines
+
+## Disclaimer
