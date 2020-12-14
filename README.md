@@ -5,9 +5,12 @@ Test jira integration
 Install guide here...
 
 ## Architecture
+Add some architecture content....
 
 ## Roadmap
 
 ## Contributor Guidelines
+Add some contrib more stuff
 
 ## Disclaimer
+add some disclaimer content.....
