@@ -9,3 +9,5 @@ Install guide here...
 ## Roadmap
 
 ## Contributor Guidelines
+
+## Disclaimer
