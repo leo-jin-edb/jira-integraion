@@ -8,6 +8,8 @@ Install guide here...
 
 ## Roadmap
 
+## Contributor Roster
+
 ## Contributor Guidelines
 
 ## Disclaimer
