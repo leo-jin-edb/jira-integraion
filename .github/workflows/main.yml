@@ -10,7 +10,8 @@ on:
   create:
   pull_request:
     branches: [ main ]
-   
+    types: [assigned, opened, ready_for_review, review_requested, reopened]
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
