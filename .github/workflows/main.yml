@@ -37,4 +37,4 @@ jobs:
         env:
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
-          GITHUB_ACCESSTOKEN: ${{ secrets.GITHUB_ACCESSTOKEN}}
+          GITHUB_ACCESSTOKEN: ${{ secrets.GH_ACCESSTOKEN}}
