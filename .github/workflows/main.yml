@@ -39,5 +39,5 @@ jobs:
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
           GITHUB_ACCESSTOKEN: ${{ secrets.GH_ACCESSTOKEN}}
         with:
-          strategy: 'unidirectional'
+          strategy: 'bidirectional'
 
