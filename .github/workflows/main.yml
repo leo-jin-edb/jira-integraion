@@ -30,14 +30,28 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: trigger transitions in jira
-        id: jira-transition
-        uses: leo-jin-edb/edb-github-jira-action@main
-        env:
-          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
-          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
-          GITHUB_ACCESSTOKEN: ${{ secrets.GH_ACCESSTOKEN}}
+       # We need this extra step to checkout this action as a private repo
+      - name: checkout private action
+        uses: actions/checkout@v2
         with:
-          strategy: 'unidirectional'
+          # This is the actual action we will execute
+          repository: EnterpriseDB/edb-actions
+          ssh-key: ${{ secrets.SSH_KEY }}
+          ref: "main"
+          path: .github/actions/edb-actions
+        
+     # Optional step to verify checkout was successfully executed
+      - name: varify
+        run: |
+          ls -la ./.github/actions/edb-actions
 
+      # This step actuall loads the edb custom action and executes it
+      - name: run private action
+        uses: ./.github/actions/edb-actions
+        with:
+          module_id: "github-jira-sync"
+          strategy: "unidirectional"
+          status_map: '{ "start": "Dev Start", "review": "Dev On Hold", "done": "Dev Done" }'
+        env:
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_BASE_URL: "https://edbtest.atlassian.net"
