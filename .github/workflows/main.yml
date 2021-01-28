@@ -51,7 +51,7 @@ jobs:
         with:
           module_id: "github-jira-sync"
           strategy: "unidirectional"
-          status_map: '{ "start": "Dev Start", "review": "Dev On Hold", "done": "Dev Done" }'
+          status_map: '{ "start": "dev start", "review": "review start", "done": "dev done" }'
         env:
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
           JIRA_BASE_URL: "https://edbtest.atlassian.net"
